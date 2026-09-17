@@ -1,0 +1,5 @@
+# Currículo fica só no computador (tem dados pessoais)
+*.pdf
+
+# Configuração local da Vercel
+.vercel

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Francisco Valeriano | Engenharia de Software</title>
+  <meta name="description" content="Portfólio de Francisco Valeriano, estudante de Engenharia de Software no Ibmec SP e full-stack em formação: Java, Spring Boot, JavaScript e MySQL.">
+  <meta name="author" content="Francisco Valeriano">
+  <meta name="theme-color" content="#6d28d9">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Francisco Valeriano | Engenharia de Software">
+  <meta property="og:description" content="Estudante de Engenharia de Software | Full-stack em formação | JavaScript | SQL | Java">
+  <meta property="og:locale" content="pt_BR">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Aplica tema e idioma salvos antes de desenhar a página (evita "piscar") -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      try {
+        var theme = localStorage.getItem('theme');
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        root.setAttribute('data-theme', theme);
+        if (localStorage.getItem('lang') === 'en') root.setAttribute('lang', 'en');
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Ícones reutilizáveis -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#conteudo" data-i18n="a11y.skip">Pular para o conteúdo</a>
+
+  <!-- ============ CABEÇALHO ============ -->
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+
+      <nav class="nav" id="menu" data-nav data-i18n-attr="aria-label:nav.label" aria-label="Navegação principal">
+        <a href="#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
+        <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+        <a href="#formacao" data-i18n="nav.education">Formação</a>
+        <a href="#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-toggle" type="button" data-lang-toggle data-i18n-attr="aria-label:lang.toggle" aria-label="Switch to English">
+          <span class="lang-pt">PT</span><span class="lang-en">EN</span>
+        </button>
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle data-i18n-attr="aria-label:theme.toggle" aria-label="Alternar tema claro e escuro">
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+        <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-controls="menu" aria-expanded="false" data-i18n-attr="aria-label:nav.menu" aria-label="Abrir ou fechar menu">
+          <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- ============ INÍCIO ============ -->
+    <section class="hero" id="topo">
+      <div class="hero-blobs" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="status-badge"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg><span data-i18n="hero.status">Em busca de estágio</span></p>
+          <p class="hero-greeting" data-i18n="hero.greeting">Olá, me chamo</p>
+          <h1 class="hero-name"><span class="gradient-text">Francisco Valeriano</span></h1>
+          <p class="sr-only" data-i18n="hero.title">Estudante de Engenharia de Software | Full-stack em formação | JavaScript | SQL | Java</p>
+          <p class="hero-role mono" aria-hidden="true"><span class="prompt">&gt;</span> <span data-typed>Estudante de Engenharia de Software</span><span class="caret"></span></p>
+          <p class="hero-lead" data-i18n="hero.lead">Estudo no Ibmec SP e estou aprendendo a construir aplicações de ponta a ponta: do banco de dados à interface.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projetos">
+              <span data-i18n="hero.ctaProjects">Ver projetos</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+
+          <ul class="hero-social">
+            <li><a class="icon-btn" href="https://github.com/FranciscoTech-Eng" target="_blank" rel="noopener" data-i18n-attr="aria-label:social.github" aria-label="GitHub de Francisco Valeriano"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            <li><a class="icon-btn" href="https://www.linkedin.com/in/francisco-valeriano-dev" target="_blank" rel="noopener" data-i18n-attr="aria-label:social.linkedin" aria-label="LinkedIn de Francisco Valeriano"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a class="icon-btn" href="mailto:francisco.valerianotech@gmail.com" data-i18n-attr="aria-label:social.email" aria-label="Enviar e-mail"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="code-window">
+            <div class="code-top">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="code-file">Francisco.java</span>
+            </div>
+            <div class="code-body">
+              <span class="ln"><span class="tk-k">public class</span> <span class="tk-c">Francisco</span> {</span>
+              <span class="ln">    <span class="tk-t">String</span> course = <span class="tk-s">"<span data-i18n="code.course">Engenharia de Software</span>"</span>;</span>
+              <span class="ln">    <span class="tk-t">String</span> university = <span class="tk-s">"Ibmec SP"</span>;</span>
+              <span class="ln">    <span class="tk-t">String</span> focus = <span class="tk-s">"Full-stack"</span>;</span>
+              <span class="ln">    <span class="tk-t">String</span>[] stack = {</span>
+              <span class="ln">        <span class="tk-s">"Java"</span>, <span class="tk-s">"Spring Boot"</span>,</span>
+              <span class="ln">        <span class="tk-s">"JavaScript"</span>, <span class="tk-s">"MySQL"</span></span>
+              <span class="ln">    };</span>
+              <span class="ln">    <span class="tk-t">boolean</span> openToWork = <span class="tk-b">true</span>;</span>
+              <span class="ln">}</span>
+            </div>
+          </div>
+          <div class="float-chip chip-1"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/spring/spring-original.svg" alt="" width="22" height="22">Spring Boot</div>
+          <div class="float-chip chip-2"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mysql/mysql-original.svg" alt="" width="22" height="22">MySQL</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="about.eyebrow">01 · Sobre mim</p>
+          <h2 class="section-title" data-i18n="about.title">Quem está por trás do código</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p data-i18n-html="about.p1">Sou estudante de <strong>Engenharia de Software no Ibmec SP</strong> e moro em Mogi das Cruzes/SP. Tenho interesse em usar lógica de programação e automação para criar sistemas que ajudem pessoas e empresas a tomar decisões melhores.</p>
+            <p data-i18n-html="about.p2">Meu foco é o <strong>desenvolvimento full-stack</strong>. No back-end, estudo <strong>Java com Spring Boot</strong> e <strong>MySQL</strong>; no front-end, <strong>JavaScript</strong>. Gosto de entender o caminho completo de uma aplicação, do banco de dados até a tela.</p>
+            <p data-i18n-html="about.p3">Tenho perfil proativo, gosto de trabalhar em equipe e estou sempre aprendendo algo novo. Agora, procuro um <strong>estágio em desenvolvimento</strong> para aplicar o que aprendo na faculdade em projetos reais.</p>
+          </div>
+
+          <ul class="facts">
+            <li class="card card-hover fact reveal" style="--d: 0ms">
+              <span class="tile grad-violet"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+              <p class="label" data-i18n="fact.location">Localização</p>
+              <p class="fact-value" data-i18n="fact.locationValue">Mogi das Cruzes/SP</p>
+            </li>
+            <li class="card card-hover fact reveal" style="--d: 80ms">
+              <span class="tile grad-pink"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span>
+              <p class="label" data-i18n="fact.degree">Graduação</p>
+              <p class="fact-value" data-i18n="fact.degreeValue">Eng. de Software · Ibmec SP</p>
+            </li>
+            <li class="card card-hover fact reveal" style="--d: 160ms">
+              <span class="tile grad-orange"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></span>
+              <p class="label" data-i18n="fact.focus">Foco</p>
+              <p class="fact-value" data-i18n="fact.focusValue">Desenvolvimento full-stack</p>
+            </li>
+            <li class="card card-hover fact reveal" style="--d: 240ms">
+              <span class="tile grad-cyan"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></span>
+              <p class="label" data-i18n="fact.languages">Idiomas</p>
+              <p class="fact-value" data-i18n="fact.languagesValue">Inglês intermediário</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HABILIDADES ============ -->
+    <section class="section section-alt" id="habilidades">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="skills.eyebrow">02 · Habilidades</p>
+          <h2 class="section-title" data-i18n="skills.title">Do front-end ao banco de dados</h2>
+          <p class="section-lead" data-i18n="skills.lead">As tecnologias que uso e estudo hoje.</p>
+        </header>
+
+        <div class="skills-grid">
+          <article class="card card-hover skill-card reveal" style="--d: 0ms">
+            <div class="skill-card-head">
+              <span class="tile grad-violet"><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg></span>
+              <h3>Front-end</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill"><span class="skill-logo"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/javascript/javascript-original.svg" alt="" width="26" height="26" loading="lazy"></span>JavaScript</li>
+              <li class="skill"><span class="skill-logo"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/html5/html5-original.svg" alt="" width="26" height="26" loading="lazy"></span>HTML</li>
+              <li class="skill"><span class="skill-logo"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/css3/css3-original.svg" alt="" width="26" height="26" loading="lazy"></span>CSS</li>
+            </ul>
+          </article>
+
+          <article class="card card-hover skill-card reveal" style="--d: 80ms">
+            <div class="skill-card-head">
+              <span class="tile grad-pink"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg></span>
+              <h3>Back-end</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill"><span class="skill-logo"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/java/java-original.svg" alt="" width="26" height="26" loading="lazy"></span>Java</li>
+              <li class="skill"><span class="skill-logo"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/spring/spring-original.svg" alt="" width="26" height="26" loading="lazy"></span>Spring Boot</li>
+            </ul>
+          </article>
+
+          <article class="card card-hover skill-card reveal" style="--d: 160ms">
+            <div class="skill-card-head">
+              <span class="tile grad-orange"><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg></span>
+              <h3 data-i18n="skills.database">Banco de dados</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill"><span class="skill-logo"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mysql/mysql-original.svg" alt="" width="26" height="26" loading="lazy"></span>MySQL</li>
+              <li class="skill"><span class="skill-logo skill-logo--sql"><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg></span>SQL</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card skill-card--wide reveal">
+            <div class="skill-card-head">
+              <span class="tile grad-cyan"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+              <h3 data-i18n="skills.beyond">Além do código</h3>
+            </div>
+            <ul class="pill-list">
+              <li class="pill" data-i18n="skills.english">Inglês intermediário</li>
+              <li class="pill" data-i18n="skills.teamwork">Trabalho em equipe</li>
+              <li class="pill" data-i18n="skills.communication">Comunicação</li>
+              <li class="pill" data-i18n="skills.problemSolving">Resolução de problemas</li>
+              <li class="pill" data-i18n="skills.criticalThinking">Pensamento crítico</li>
+              <li class="pill" data-i18n="skills.learning">Aprendizado contínuo</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJETOS ============ -->
+    <section class="section" id="projetos">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="projects.eyebrow">03 · Projetos</p>
+          <h2 class="section-title" data-i18n="projects.title">Projetos</h2>
+          <p class="section-lead" data-i18n="projects.lead">Aplicações que desenvolvo para praticar e evoluir no desenvolvimento full-stack.</p>
+        </header>
+
+        <!--
+          Enquanto não houver link, o card mostra "Em breve" e não é clicável.
+          Quando os projetos estiverem prontos, adicione o endereço no <a>, por exemplo:
+          <a class="card projects-card reveal" href="https://github.com/FranciscoTech-Eng" target="_blank" rel="noopener">
+          O card passa a mostrar "Ver projetos" e abre o link em outra aba.
+        -->
+        <a class="card projects-card reveal" target="_blank" rel="noopener">
+          <span class="tile tile--lg grad-violet"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+
+          <div class="projects-card-body">
+            <span class="project-tag project-tag--soon when-soon" data-i18n="projects.soon">Em breve</span>
+            <h3 class="project-title" data-i18n="projects.cardTitle">Projetos full-stack</h3>
+            <p class="project-desc" data-i18n="projects.cardDesc">Aplicações completas com Java, Spring Boot, MySQL e JavaScript, do banco de dados à interface.</p>
+            <ul class="tags">
+              <li class="tag">Java</li>
+              <li class="tag">Spring Boot</li>
+              <li class="tag">MySQL</li>
+              <li class="tag">JavaScript</li>
+            </ul>
+          </div>
+
+          <span class="work-status when-soon" data-i18n="projects.inProgress">Em desenvolvimento</span>
+          <span class="text-link when-ready">
+            <span data-i18n="projects.view">Ver projetos</span>
+            <span class="sr-only" data-i18n="a11y.newTab">(abre em nova aba)</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ FORMAÇÃO ============ -->
+    <section class="section section-alt" id="formacao">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow" data-i18n="edu.eyebrow">04 · Formação</p>
+          <h2 class="section-title" data-i18n="edu.title">Trajetória acadêmica</h2>
+        </header>
+
+        <article class="card edu-card reveal">
+          <span class="tile tile--lg grad-violet"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span>
+          <div class="edu-body">
+            <p class="edu-period mono" data-i18n="edu.period">mar/2026 – nov/2029 · previsão</p>
+            <h3 data-i18n="edu.degree">Bacharelado em Engenharia de Software</h3>
+            <p class="edu-school" data-i18n="edu.school">Ibmec SP — Faria Lima</p>
+
+            <div class="progress" data-course-progress data-start="2026-03-01" data-end="2029-11-30">
+              <div class="progress-head">
+                <span data-i18n="edu.progress">Progresso do curso</span>
+                <strong class="mono gradient-text" data-progress-value>0%</strong>
+              </div>
+              <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-i18n-attr="aria-label:edu.progress" aria-label="Progresso do curso">
+                <div class="progress-fill"></div>
+              </div>
+              <div class="progress-labels mono">
+                <span data-i18n="edu.start">Início · mar/2026</span>
+                <span data-i18n="edu.end">Formatura · nov/2029</span>
+              </div>
+            </div>
+
+            <p class="label edu-subjects-label" data-i18n="edu.subjects">Disciplinas em destaque</p>
+            <ul class="tags">
+              <li class="tag" data-i18n="edu.s1">Engenharia de Dados</li>
+              <li class="tag" data-i18n="edu.s2">Projetos Front-end e Back-end</li>
+              <li class="tag" data-i18n="edu.s3">Programação Orientada a Objetos</li>
+              <li class="tag" data-i18n="edu.s4">Fundamentos de Segurança da Informação</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-head">
+            <p class="eyebrow" data-i18n="contact.eyebrow">05</p>
+            <h2 class="section-title" data-i18n="contact.title">Contato</h2>
+            <p class="section-lead" data-i18n="contact.lead">Procuro oportunidades de estágio e adoro trocar ideias sobre tecnologia. Fale comigo por qualquer um destes canais:</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-item contact-item--main">
+              <span class="tile grad-violet"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+              <div class="contact-info">
+                <p class="label" data-i18n="contact.email">E-mail</p>
+                <a class="contact-value" href="mailto:francisco.valerianotech@gmail.com">francisco.valerianotech<wbr>@gmail.com</a>
+              </div>
+              <button class="copy-btn" type="button" data-copy="francisco.valerianotech@gmail.com" data-i18n-attr="aria-label:contact.copyLabel" aria-label="Copiar e-mail">
+                <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+                <span data-copy-text data-i18n="contact.copy">Copiar</span>
+              </button>
+            </div>
+
+            <a class="contact-item" href="https://www.linkedin.com/in/francisco-valeriano-dev" target="_blank" rel="noopener">
+              <span class="tile grad-cyan"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></span>
+              <div class="contact-info">
+                <p class="label">LinkedIn</p>
+                <p class="contact-value">francisco-valeriano-dev</p>
+              </div>
+              <svg class="icon contact-arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+            </a>
+
+            <a class="contact-item" href="https://github.com/FranciscoTech-Eng" target="_blank" rel="noopener">
+              <span class="tile grad-pink"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></span>
+              <div class="contact-info">
+                <p class="label">GitHub</p>
+                <p class="contact-value">FranciscoTech-Eng</p>
+              </div>
+              <svg class="icon contact-arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span data-year>2026</span> Francisco Valeriano. <span data-i18n="footer.made">Feito com HTML, CSS e JavaScript.</span></p>
+      <a class="text-link" href="#topo">
+        <span data-i18n="footer.top">Voltar ao topo</span>
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/translations.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
