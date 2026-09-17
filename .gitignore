@@ -3,3 +3,4 @@
 
 # Configuração local da Vercel
 .vercel
+.env*

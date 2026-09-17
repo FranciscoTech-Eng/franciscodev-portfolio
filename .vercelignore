@@ -1,0 +1,6 @@
+# Arquivos que não vão para o site publicado
+*.pdf
+.env*
+.vercel
+.git
+README.md
